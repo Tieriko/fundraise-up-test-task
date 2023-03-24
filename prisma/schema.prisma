@@ -1,0 +1,18 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("MONGO_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model TrackingEvent {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt DateTime @default(now())
+  event     String
+  tags      String[]
+  url       String
+  title     String
+  ts        Int
+}
