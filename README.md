@@ -7,6 +7,20 @@ npm (v6.x or higher)
 ```
 ___
 
+## Installation
+
+Clone the repository:
+
+```BASH
+git clone https://github.com/Tieriko/fundraise-up-test-task.git
+```
+
+Install dependencies:
+
+```
+npm install
+```
+___
 ## Configuration
 
 Create a `.env` file in the root directory of the project to set the environment variables:
@@ -23,20 +37,7 @@ ALLOWED_ORIGINS=http://localhost:50000
 MONGO_URL="mongodb+srv://user:password@cluster0.mongodb.net/db_name?retryWrites=true&w=majority"
 ```
 ___
-
-## Installation
-
-Clone the repository:
-
-```BASH
-git clone https://github.com/Tieriko/fundraise-up-test-task.git
-```
-
-Install dependencies:
-
-```
-npm install
-```
+## DB generation and synchronization
 
 Generate Prisma client:
 
