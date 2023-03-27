@@ -29,8 +29,8 @@ export class Tracker implements ITracker {
   }
 
   public processQueue(scheduledQueue: Event[]): void {
-    const processEvent = (event: Event) => this.track(event.event, ...event.tags)
-    scheduledQueue.forEach(processEvent)
+    this.buffer = [...this.buffer, ...scheduledQueue]
+    this.scheduleSending()
   }
 
   public track(event: string, ...tags: string[]): void {

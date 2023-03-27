@@ -5,7 +5,12 @@
     (function (w, url) {
       window.tracker = window.tracker || { q: [] };
       window.tracker.track = function () {
-        window.tracker.q.push({ event: arguments[0], tags: Array.prototype.slice.call(arguments, 1) });
+        window.tracker.q.push({
+          event: arguments[0],
+          tags: Array.prototype.slice.call(arguments, 1),
+          url: window.location.href,
+          title: document.title,
+          ts: Date.now(), });
       };
 
       const script = document.createElement('script');
